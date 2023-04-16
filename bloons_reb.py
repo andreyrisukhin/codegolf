@@ -4,6 +4,13 @@
 (2) Minimize soln
 """
 
+""" Online soln:
+PYTHONHASHSEED=65 environment variable
+lambda l:sum([47,11,3164,616,16656,4,1,5,23,104,11,23,3,2,11,816,55760][hash(a*9828)%17]*b for a,b in l)
+
+Perhaps a chance to learn lambda functions! :)
+"""
+
 """
 Test Cases
 Input: 1 red
@@ -60,6 +67,7 @@ def calculate_bloons_rbe(s:str) -> int:
         count, bid = p.split(' ')
         rbe += map[bid] * int(count)
     return rbe
+# A list comprehension could be compact
 
 for test, result in tests.items():
     print(f'{test} -> {calculate_bloons_rbe(test)}, expected {result}')
